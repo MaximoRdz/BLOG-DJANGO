@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block  content %}
+    <h1>{{post}}</h1>
+    <p>
+        <strong>{{post.abstract}}</strong>
+    </p>
+    <p>
+        {{post.body}}
+    </p>
+    <footer>
+        <small>
+            Created: {{post.created_at | date:"Y-d-m"}}
+        </small>
+    </footer>
+{% endblock%}

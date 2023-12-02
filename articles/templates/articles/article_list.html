@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block  content %}
+
+
+    <h1>Article List</h1>
+
+    <div class="image">
+        <img src="{% static 'test_image.png' %}" alt="my image" height="250" width="250">
+    </div>
+</br>
+    <div class="posts">
+        {% for post in posts %}
+        <a href="{% url 'article_detail' slug=post.slug %}">
+            <div class="post-card">
+                <div class="container">
+                    <h2>
+                        {{post}}
+                    </h2>
+                    <p>{{post.abstract}}</p>
+                    <small>Created at: {{post.created_at | date:"Y-d-m"}}</small>
+                </div>
+            </div>
+        </a>
+        </br>
+        {% endfor %}
+    </div>  
+
+{% endblock%}

@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--Metadata information that will not be rendered, check also open graph-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>{% block title %}UnstableMax{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'test.css' %}">
+	</head>
+	<body>
+        <div class="wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+	</body>
+</html>
