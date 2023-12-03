@@ -4,6 +4,9 @@
 
 {% block  content %}
     <h1>{{post}}</h1>
+    <div class="image">
+        <img src={{post.thumbnail_image.url}}>
+    </div>
     <p>
         <strong>{{post.abstract}}</strong>
     </p>
