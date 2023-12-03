@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load markdown_to_html %}
 
 {% block  content %}
+<div class="body">
     <h1>{{post}}</h1>
     <div class="image">
         <img src={{post.thumbnail_image.url}}>
@@ -10,9 +12,9 @@
     <p>
         <strong>{{post.abstract}}</strong>
     </p>
-    <p>
-        {{post.body}}
-    </p>
+    
+        {{post.body | markdown | safe}}
+    </div>
     <footer>
         <small>
             Created: {{post.created_at | date:"Y-d-m"}}
